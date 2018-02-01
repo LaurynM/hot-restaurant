@@ -11,7 +11,7 @@ var PORT = process.env.port || 3000;
 
 //========STORING STUFF
 var tables = [];
-
+var waitList = [];
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
@@ -37,4 +37,8 @@ app.get("/tables", function(req, res){
 
 app.get("/api/tables", function(req, res){
   return res.json(tables);
+});
+
+app.get("/api/waitlist", function(req, res){
+  return res.json(waitList);
 });
