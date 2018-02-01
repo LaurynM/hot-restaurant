@@ -64,7 +64,9 @@
 				console.log("Reserved tables: " + data);
 				if (data) {
 				  $("#tableSection").show();
-				  $("#tableSection").text(data.uniqueID);
+				  for ( var i = 0; i < data.length; i++){
+					  $("#tableSection").append("<div>" + data[i].uniqueID + "</div>");
+				  }
 				}
 				else {
 				  $("#tableSection").text("No reservations have been made.");
@@ -74,7 +76,9 @@
 				console.log("Waitlisted parties: " + data);
 				if (data) {
 				  $("#waitlistSection").show();
-				  $("#waitlistSection").text(data.uniqueID);
+				  for ( var i = 0; i < data.length; i++){
+					  $("#waitlistSection").append("<div>" + data[i].uniqueID + "</div>");
+				  }
 				}
 				else {
 				  $("#waitlistSection").text("The waitlist is empty.");
