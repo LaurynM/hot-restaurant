@@ -11,7 +11,7 @@ var PORT = process.env.port || 3000;
 
 //========STORING STUFF
 var tables = [];
-
+var waitList = [];
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
@@ -39,6 +39,7 @@ app.get("/api/tables", function(req, res){
   return res.json(tables);
 })
 
+
 var reservations = [];
 // Create New Reservation - takes in JSON input
 app.post("/reserve/new", function(req, res) {
@@ -51,4 +52,8 @@ app.post("/reserve/new", function(req, res) {
 
   // We then display the JSON to the users
   res.json(newReservation);
+});
+
+app.get("/api/waitlist", function(req, res){
+  return res.json(waitList);
 });
