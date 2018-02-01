@@ -37,8 +37,11 @@ app.get("/tables", function(req, res){
 
 app.get("/api/tables", function(req, res){
   return res.json(tables);
-<<<<<<< HEAD
+});
 
+app.get("/api/waitlist", function(req, res){
+  return res.json(waitList);
+});
   
 var reservations = [];
 // Create New Reservation - takes in JSON input
@@ -52,10 +55,4 @@ app.post("/reservation/new", function(req, res) {
 
   // We then display the JSON to the users
   res.json(newReservation);
-=======
-});
-
-app.get("/api/waitlist", function(req, res){
-  return res.json(waitList);
->>>>>>> features/api/waitlist
 });
