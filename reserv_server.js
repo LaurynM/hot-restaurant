@@ -9,6 +9,9 @@ var path = require("path");
 var app = express();
 var PORT = process.env.port || 3000;
 
+//========STORING STUFF
+var tables = [];
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
@@ -31,3 +34,7 @@ app.get("/reserve", function(req,res){
 app.get("/tables", function(req, res){
   res.sendFile(path.join(__dirname, "tables.html"));
 })
+
+app.get("/api/tables", function(req, res){
+  return res.json(tables);
+});
