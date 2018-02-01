@@ -18,3 +18,17 @@ app.listen(PORT, function() {
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+var reservations = [];
+// Create New Reservation - takes in JSON input
+app.post("/reservation/new", function(req, res) {
+  var newReservation = req.body;
+
+  console.log(newReservation);
+
+  // We then add the json the user sent to the character array
+  reservations.push(newReservation);
+
+  // We then display the JSON to the users
+  res.json(newReservation);
+});
