@@ -37,11 +37,11 @@ app.get("/tables", function(req, res){
 
 app.get("/api/tables", function(req, res){
   return res.json(tables);
+})
 
-  
 var reservations = [];
 // Create New Reservation - takes in JSON input
-app.post("/reservation/new", function(req, res) {
+app.post("/reserve/new", function(req, res) {
   var newReservation = req.body;
 
   console.log(newReservation);
