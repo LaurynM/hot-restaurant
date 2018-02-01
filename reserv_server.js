@@ -37,9 +37,12 @@ app.get("/tables", function(req, res){
 
 app.get("/api/tables", function(req, res){
   return res.json(tables);
-})
+});
 
-
+app.get("/api/waitlist", function(req, res){
+  return res.json(waitList);
+});
+  
 var reservations = [];
 // Create New Reservation - takes in JSON input
 app.post("/reserve/new", function(req, res) {
