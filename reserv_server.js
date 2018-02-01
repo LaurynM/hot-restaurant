@@ -52,6 +52,11 @@ app.post("/reserve/new", function(req, res) {
 
   // We then add the json the user sent to the character array
   reservations.push(newReservation);
+  if(tables.length>5){
+    tables.push(newReservation);
+  }else{
+    waitList.push(newReservation);
+  }
 
   // We then display the JSON to the users
   res.json(newReservation);
